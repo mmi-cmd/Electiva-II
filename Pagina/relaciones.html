@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title> Relaciones CSS </title>
+    <style>
+        h1{
+            color: rgb(114, 76, 114);
+            font-size:large;
+        }
+
+        a{
+            font-style: italic;
+        }
+
+        article{
+            background-color: rgb(189, 153, 223);
+        }
+
+        section > h1{
+            background-color: rgb(209, 147, 209); /* solo se aplica al descendiente inmediato si se usa > */
+            text-transform: uppercase;
+        }
+
+
+
+        article p + a {
+            color: aqua; /* se aplica al descensiente inmediato despues de otro, se aplica a los a que esten inmediatamente despues de p */
+            text-decoration:overline;
+        }
+
+        section > dl{
+            background-color: rgb(194, 235, 245);  /* solo se aplica al descendiente inmediato, a los dl despues de section > */
+        }
+
+        footer small + p { /* se aplica al descensiente inmediato despues de otro, se aplica a los p que esten inmediatamente despues de small */
+            background-color: rgb(82, 184, 184);
+        }
+        
+        section:nth-child(3) > h1 { /* aplica h1 de la 3 section */
+            color: rgb(247, 247, 167);
+        }
+
+        a:hover{
+            color: rgb(241, 239, 134);
+        } */
+
+        a:link{
+            color: red;
+        }
+
+        :root{
+            background-color: rgb(236, 219, 193);
+        }
+
+        a:visited{
+            color: green;
+        } 
+
+        a:active{
+            color: yellow;
+        }
+
+
+        /* 
+        absolute = con respecto a más las externo.
+        relative =  Se controla a todos los elementos que esten dentro de esa posicion, se mueve en relacion al mas externo y no a toda la pagina
+        fixed = queda fijado, no hay movimiento al hacer scroll
+         */
+
+        .container{
+            position: relative;
+            top: 50px;
+            left: 50px;
+        }
+
+        /* Regla de especificidad, lo asigna el navegador (valor en linea, valor ID, clase o pseudoclase, elemento del selector) */
+        /* buscar important! y la ignorancia del arbol de proximidad */
+        
+    
+    </style>
+
+</head>
+
+<body>
+
+    <div class="main-content">
+        <section class="articles">
+            <h1>Últimas publicaciones</h1>
+
+            <div class="container">
+                <article>
+                    <h1>Hoy</h1>
+                    <p>
+                    Lorem ipsum dolor sit amet, cum alienum sententiae et, eam etiam petentium ut. Nec te veri facer aliquando, at agam primis alienum nec. Regione legendos vim...
+                    <a href="#">Más</a>
+                    </p>
+                    <a href="#">Calificación</a>
+                </article>
+            </div>
+    
+            <article>
+                <h1>Ayer</h1>
+                <p>
+                Lorem ipsum dolor sit amet, cum alienum sententiae et, eam etiam petentium ut. Nec te veri facer aliquando, at agam primis alienum nec. Regione legendos vim...
+                <a href="#">Más</a>
+                </p>
+                <a href="#">Calificación</a>
+            </article>
+        </section>
+    
+    
+        <section class="articles">
+            <h1>Publicaciones Antiguas</h1>
+    
+            <article>
+                <h1>Titulo de algo</h1>
+                <p>
+                Lorem ipsum dolor sit amet, cum alienum sententiae et, eam etiam petentium ut. Nec te veri facer aliquando, at agam primis alienum nec. Regione legendos vim...
+                <a href="#">Más</a>
+                </p>
+                <a href="#">Calificación</a>
+            </article>
+    
+        </section>
+    
+        <section class="articles">
+            <h1>Texto 3</h1>
+    
+            <article>
+                <h1>Títulos de hoy</h1>
+                <p>
+                Lorem ipsum dolor sit amet, cum alienum sententiae et, eam etiam petentium ut. Nec te veri facer aliquando, at agam primis alienum nec. Regione legendos vim...
+                <a href="#">Más</a>
+                </p>
+                <a href="#">Calificación</a>
+            </article>
+    
+    
+            <article>
+                <h1>Otro título</h1>
+                <p>
+                Lorem ipsum dolor sit amet, cum alienum sententiae et, eam etiam petentium ut. Nec te veri facer aliquando, at agam primis alienum nec. Regione legendos vim...
+                <a href="#">Más</a>
+                </p>
+                <a href="#">Calificación</a>
+            </article>
+        </section>
+    
+    
+        <section class="articles">
+            <h1>Texto 4</h1>
+    
+            <article>
+                <h1>Definición sobre algo</h1>
+                <p>
+                Lorem ipsum dolor sit amet, cum alienum sententiae et, eam etiam petentium ut. Nec te veri facer aliquando, at agam primis alienum nec. Regione legendos vim...
+                <a href="#">Más</a>
+                </p>
+                <a href="#">Calificación</a>
+            </article>
+    
+        </section>
+    
+        <aside>
+            <section class="glosario">
+                <dl>
+                    <dt>Concepto</dt>
+                    <dd>Definición</dd>
+                </dl>
+            </section>
+        </aside>
+    </div>
+
+<footer>
+    <small>&copy; 2014. Todos los derechos reservados</small>
+    <p>See our <a href="#">Términos y condiciones</a></p>
+</footer>
+
+</body>
+</html>
